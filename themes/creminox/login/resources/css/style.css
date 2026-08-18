@@ -1,0 +1,740 @@
+/* ===========================================================
+   CREMINOX LOGIN THEME - PROFESSIONAL CUSTOMIZATION
+   =========================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* =====================================================
+   COLOR PALETTE
+   ===================================================== */
+
+:root {
+    --creminox-bg: #131313;
+    --creminox-card: #1a1a1f;
+    --creminox-input: #131313;
+    --creminox-border: #404049;
+    --creminox-text: #F3F4F6;
+    --creminox-text-secondary: #D1D5DB;
+    --creminox-primary: #EF4444;
+    --creminox-primary-dark: #DC2626;
+    --creminox-accent: #60A5FA;
+}
+
+/* =====================================================
+   BODY & LAYOUT
+   ===================================================== */
+
+html,
+body {
+    background: var(--creminox-bg) !important;
+    color: var(--creminox-text) !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+body {
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =====================================================
+   MAIN LOGIN CONTAINER
+   ===================================================== */
+
+.pf-v5-c-login-creminox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    width: 100%;
+}
+
+#kc-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* =====================================================
+   FORM CARD
+   ===================================================== */
+
+.pf-v5-c-card-creminox {
+    width: 100%;
+    max-width: 520px;
+    background: rgba(31, 31, 31, 1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 10px !important;
+    padding: 50px 40px !important;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+/* =====================================================
+   LOGO / HEADER
+   ===================================================== */
+
+.kc-logo-creminox {
+    width: 100%;
+    height: 90px;
+    background: url("../img/logo.png") center no-repeat !important;
+    background-size: contain !important;
+    background-position: center !important;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#kc-page-title {
+    display: none;
+}
+
+header.pf-v5-c-form__header {
+    display: none;
+}
+
+/* =====================================================
+   FORM GROUPS
+   ===================================================== */
+
+.pf-v5-c-form__group {
+    gap: 10px !important;
+    margin-bottom: 18px !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.formulariosMargin {
+    margin-bottom: 0px !important;
+    gap: 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.pf-v5-c-form__group-label {
+    margin-bottom: 10px !important;
+}
+
+label {
+    color: var(--creminox-text) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    /* margin-bottom: 10px !important; */
+    display: block !important;
+    line-height: 1.4 !important;
+    white-space: normal !important;
+}
+
+/* =====================================================
+   INPUT FIELDS
+   ===================================================== */
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+.pf-v5-c-form-control {
+    width: 100% !important;
+    height: 50px !important;
+    border-radius: 10px !important;
+    border: 1px solid var(--creminox-border) !important;
+    background: var(--creminox-input) !important;
+    color: var(--creminox-text) !important;
+    padding: 12px 16px !important;
+    font-size: 15px !important;
+    transition: all 0.25s ease !important;
+    font-family: inherit !important;
+    box-sizing: border-box !important;
+    vertical-align: middle !important;
+    line-height: normal !important;
+}
+
+input::placeholder {
+    color: #9CA3AF !important;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+.pf-v5-c-form-control:hover {
+    border-color: #505059 !important;
+    background: #1a1a1f !important;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+.pf-v5-c-form-control:focus {
+    outline: none !important;
+    border-color: var(--creminox-primary) !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+    background: #1a1a1f !important;
+}
+
+/* =====================================================
+   CHECKBOXES
+   ===================================================== */
+
+.pf-v5-c-check {
+    margin-bottom: 12px !important;
+}
+
+.pf-v5-c-check__label {
+    color: var(--creminox-text-secondary) !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+
+.checkbox {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+.checkbox label {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+
+input[type="checkbox"],
+.checkbox input[type="checkbox"] {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    border: 2px solid var(--creminox-border) !important;
+    border-radius: 4px !important;
+    background: var(--creminox-input) !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+input[type="checkbox"]:hover,
+.checkbox input[type="checkbox"]:hover {
+    border-color: var(--creminox-primary) !important;
+    background: rgba(239, 68, 68, 0.05) !important;
+}
+
+input[type="checkbox"]:checked,
+.checkbox input[type="checkbox"]:checked {
+    background: var(--creminox-primary) !important;
+    border-color: var(--creminox-primary) !important;
+}
+
+input[type="checkbox"]:checked::after,
+.checkbox input[type="checkbox"]:checked::after {
+    content: '✓' !important;
+    color: white !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    position: absolute !important;
+}
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+input[type="submit"],
+button[type="submit"],
+.pf-v5-c-button.pf-m-primary {
+    width: 100% !important;
+    height: 50px !important;
+    border: none !important;
+    border-radius: 10px !important;
+    background: linear-gradient(135deg, var(--creminox-primary) 0%, var(--creminox-primary-dark) 100%) !important;
+    color: white !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 12px 24px !important;
+    font-family: inherit !important;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover,
+.pf-v5-c-button.pf-m-primary:hover {
+    background: linear-gradient(135deg, var(--creminox-primary-dark) 0%, #B91C1C 100%) !important;
+    box-shadow: 0 10px 30px rgba(239, 68, 68, 0.4) !important;
+    transform: translateY(-2px);
+}
+
+input[type="submit"]:active,
+button[type="submit"]:active,
+.pf-v5-c-button.pf-m-primary:active {
+    transform: translateY(0);
+}
+
+/* =====================================================
+   LINKS
+   ===================================================== */
+
+a {
+    color: var(--creminox-accent) !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+}
+
+a:hover {
+    color: #93C5FD !important;
+    text-decoration: underline !important;
+}
+
+/* Links styled as buttons */
+a.pf-v5-c-button.pf-m-primary {
+    display: inline-block !important;
+    width: 100% !important;
+    height: 50px !important;
+    border: none !important;
+    border-radius: 10px !important;
+    background: linear-gradient(135deg, var(--creminox-primary) 0%, var(--creminox-primary-dark) 100%) !important;
+    color: white !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 12px 24px !important;
+    font-family: inherit !important;
+    text-align: center !important;
+    line-height: 26px !important;
+}
+
+a.pf-v5-c-button.pf-m-primary:hover {
+    background: linear-gradient(135deg, var(--creminox-primary-dark) 0%, #B91C1C 100%) !important;
+    box-shadow: 0 10px 30px rgba(239, 68, 68, 0.4) !important;
+    transform: translateY(-2px) !important;
+    text-decoration: none !important;
+    color: white !important;
+}
+
+/* =====================================================
+   FORGOT PASSWORD
+   ===================================================== */
+
+#kc-forgot-password {
+    text-align: center !important;
+    margin-top: 12px !important;
+    margin-bottom: 0 !important;
+}
+
+#kc-forgot-password a {
+    color: var(--creminox-accent) !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+}
+
+#kc-forgot-password a:hover {
+    text-decoration: underline !important;
+}
+
+/* =====================================================
+   ALERTS / MESSAGES
+   ===================================================== */
+
+.pf-c-alert,
+.alert-error,
+.alert-warning,
+.alert-success,
+.alert-info {
+    border-radius: 10px !important;
+    padding: 12px 16px !important;
+    margin-bottom: 16px !important;
+    font-size: 14px !important;
+}
+
+.alert-error,
+.pf-m-danger {
+    background: rgba(239, 68, 68, 0.15) !important;
+    border: 1px solid rgba(239, 68, 68, 0.5) !important;
+    color: #FECACA !important;
+}
+
+.alert-warning,
+.pf-m-warning {
+    background: rgba(245, 158, 11, 0.15) !important;
+    border: 1px solid rgba(245, 158, 11, 0.5) !important;
+    color: #FEF3C7 !important;
+}
+
+.alert-success,
+.pf-m-success {
+    background: rgba(16, 185, 129, 0.15) !important;
+    border: 1px solid rgba(16, 185, 129, 0.5) !important;
+    color: #A7F3D0 !important;
+}
+
+.pf-c-alert__icon {
+    display: none;
+}
+
+/* =====================================================
+   SOCIAL PROVIDERS
+   ===================================================== */
+
+#kc-social-providers {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#kc-social-providers h2 {
+    color: var(--creminox-text-secondary) !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    margin-bottom: 16px !important;
+}
+
+.social-providers-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.social-providers-wrapper > a:nth-child(n+2):nth-last-child(n+2) {
+    grid-column: span 1;
+}
+
+.social-providers-wrapper:has(> a:nth-child(n+2)) {
+    grid-template-columns: 1fr 1fr;
+}
+
+.social-provider-btn,
+.pf-v5-c-button.pf-m-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    height: 45px !important;
+    padding: 0 12px !important;
+    border-radius: 10px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: var(--creminox-text) !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: all 0.25s ease !important;
+    cursor: pointer !important;
+}
+
+.social-provider-btn:hover,
+.pf-v5-c-button.pf-m-link:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+    color: #F3F4F6 !important;
+}
+
+/* =====================================================
+   REGISTRATION / INFO
+   ===================================================== */
+
+#kc-reset-info2 {
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+#kc-reset-info-wrapper2 {
+    color: var(--creminox-text-secondary) !important;
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+}
+
+#kc-registration-container,
+#kc-info,
+#kc-reset-info {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+#kc-registration span,
+#kc-info span {
+    color: var(--creminox-text-secondary) !important;
+    font-size: 13px !important;
+}
+
+#kc-reset-info-wrapper {
+    color: var(--creminox-text-secondary) !important;
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+}
+
+/* =====================================================
+   INSTRUCTIONS
+   ===================================================== */
+
+.instruction {
+    color: var(--creminox-text-secondary) !important;
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+    margin: 16px 0 !important;
+    padding: 12px !important;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+}
+
+.instruction p {
+    margin: 0 !important;
+    color: var(--creminox-text-secondary) !important;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+    text-align: center;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 12px;
+    color: var(--creminox-text-secondary);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* =====================================================
+   FORM BUTTONS GROUP - MULTIPLE BUTTONS
+   ===================================================== */
+
+.kc-form-buttons-group,
+#kc-form-buttons,
+.pf-v5-c-form__group-control {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin-bottom: 12px !important;
+}
+
+.kc-form-buttons-group2,
+#kc-form-buttons2 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin-bottom: 0px !important;
+}
+
+.kc-form-buttons-group button,
+#kc-form-buttons button,
+#kc-form-buttons input[type="submit"] {
+    width: 100% !important;
+    height: 50px !important;
+    border: none !important;
+    border-radius: 10px !important;
+    background: linear-gradient(135deg, var(--creminox-primary) 0%, var(--creminox-primary-dark) 100%) !important;
+    color: white !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 12px 24px !important;
+    font-family: inherit !important;
+    margin: 0 !important;
+}
+
+.kc-form-buttons-group button:hover,
+#kc-form-buttons button:hover,
+#kc-form-buttons input[type="submit"]:hover {
+    background: linear-gradient(135deg, var(--creminox-primary-dark) 0%, #B91C1C 100%) !important;
+    box-shadow: 0 10px 30px rgba(239, 68, 68, 0.4) !important;
+    transform: translateY(-2px);
+}
+
+.kc-form-buttons-group button:active,
+#kc-form-buttons button:active,
+#kc-form-buttons input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* =====================================================
+   FEDERATED IDENTITY MESSAGES
+   ===================================================== */
+
+.kc-broker-info,
+.kc-idp-profile-info,
+.kc-confirm-link-info {
+    background: rgba(239, 68, 68, 0.08) !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+    border-radius: 8px !important;
+    padding: 16px !important;
+    /* margin-bottom: 20px !important; */
+}
+
+.kc-broker-message,
+.kc-idp-profile-message,
+.kc-confirm-link-message,
+.kc-confirm-link-submessage {
+    color: var(--creminox-text) !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+}
+
+.kc-confirm-link-submessage {
+    margin-top: 8px !important;
+    font-size: 13px !important;
+    color: var(--creminox-text-secondary) !important;
+}
+
+/* =====================================================
+   FIX DOUBLE INPUTS / FORM CONTROL ISSUES
+   ===================================================== */
+
+.pf-v5-c-form__group-control {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+}
+
+.pf-v5-c-form-control,
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+}
+
+/* Ensure inputs don't duplicate */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    max-width: 100% !important;
+    min-width: 0 !important;
+}
+
+/* Fix textarea if present */
+textarea {
+    width: 100% !important;
+    border-radius: 10px !important;
+    border: 1px solid var(--creminox-border) !important;
+    background: var(--creminox-input) !important;
+    color: var(--creminox-text) !important;
+    padding: 12px 16px !important;
+    font-size: 15px !important;
+    transition: all 0.25s ease !important;
+    font-family: inherit !important;
+    box-sizing: border-box !important;
+    line-height: 1.5 !important;
+    resize: vertical !important;
+    min-height: 120px !important;
+}
+
+textarea:hover {
+    border-color: #505059 !important;
+    background: #1a1a1f !important;
+}
+
+textarea:focus {
+    outline: none !important;
+    border-color: var(--creminox-primary) !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+    background: #1a1a1f !important;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 768px) {
+    .pf-v5-c-card-creminox {
+        padding: 35px 25px !important;
+    }
+
+    .kc-logo-creminox {
+        height: 70px;
+        margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    .pf-v5-c-form-control {
+        height: 45px !important;
+        font-size: 14px !important;
+    }
+
+    input[type="submit"],
+    button[type="submit"],
+    .pf-v5-c-button.pf-m-primary {
+        height: 45px !important;
+        font-size: 15px !important;
+    }
+
+    .social-providers-wrapper,
+    .pf-v5-c-form__group-control {
+        grid-template-columns: 1fr;
+    }
+
+    .social-provider-btn,
+    .pf-v5-c-button.pf-m-link {
+        height: 42px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .pf-v5-c-card-creminox {
+        padding: 28px 20px !important;
+        border-radius: 18px !important;
+    }
+
+    .kc-logo-creminox {
+        height: 60px;
+    }
+
+    label {
+        font-size: 13px !important;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    .pf-v5-c-form-control {
+        height: 42px !important;
+        font-size: 13px !important;
+    }
+
+    input[type="submit"],
+    button[type="submit"],
+    .pf-v5-c-button.pf-m-primary {
+        height: 42px !important;
+        font-size: 14px !important;
+    }
+
+    .social-provider-btn,
+    .pf-v5-c-button.pf-m-link {
+        height: 40px !important;
+        font-size: 11px !important;
+    }
+}

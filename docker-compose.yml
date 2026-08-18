@@ -1,0 +1,67 @@
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.7.0
+    container_name: keycloak
+    restart: always
+    volumes:
+    - ./themes/creminox:/opt/keycloak/themes/creminox
+    env_file:
+      - .env
+    environment:
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      KC_DB: mysql
+      KC_DB_URL_HOST: db
+      KC_DB_URL_DATABASE: ${MYSQL_DATABASE}
+      KC_DB_USERNAME: root
+      KC_DB_PASSWORD: ${KC_DB_PASSWORD}
+      KC_HOSTNAME: login.intranetcreminox.com
+      KC_HOSTNAME_PROTOCOL: https
+      KC_HOSTNAME_PORT: 443
+      KC_HTTP_ENABLED: "true"
+      KC_PROXY: reencrypt
+      KC_PROXY_HEADERS: xforwarded
+      KC_METRICS_ENABLED: "true"
+    command:
+      - start
+      - --spi-theme-static-max-age=-1
+      - --spi-theme-cache-themes=false
+      - --spi-theme-cache-templates=false
+    expose:
+      - "8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - keycloak-network
+
+  db:
+    image: mysql:8.0
+    container_name: keycloak_db
+    restart: always
+    env_file:
+      - .env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_HOST: ${MYSQL_ROOT_HOST}
+      TZ: ${TIMEZONE}
+    volumes:
+      - db-data:/var/lib/mysql
+    expose:
+      - "3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - keycloak-network
+
+networks:
+  keycloak-network:
+    external: true
+
+volumes:
+  db-data:
+    driver: local
