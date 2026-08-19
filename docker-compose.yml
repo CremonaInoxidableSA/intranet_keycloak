@@ -13,7 +13,7 @@ services:
       KC_DB: mysql
       KC_DB_URL_HOST: db
       KC_DB_URL_DATABASE: ${MYSQL_DATABASE}
-      KC_DB_USERNAME: root
+      KC_DB_USERNAME: keycloak_user
       KC_DB_PASSWORD: ${KC_DB_PASSWORD}
       KC_HOSTNAME: login.intranetcreminox.com
       KC_HOSTNAME_PROTOCOL: https
@@ -44,10 +44,13 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_ROOT_HOST: ${MYSQL_ROOT_HOST}
+      MYSQL_USER: keycloak_user
+      MYSQL_PASSWORD: ${KC_DB_PASSWORD}
       TZ: ${TIMEZONE}
     volumes:
       - db-data:/var/lib/mysql
+      - ./db_init:/docker-entrypoint-initdb.d
+    command: --default-authentication-plugin=mysql_native_password --bind-address=0.0.0.0 --skip-name-resolve
     expose:
       - "3306"
     healthcheck:
